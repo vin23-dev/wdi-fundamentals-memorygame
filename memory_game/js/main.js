@@ -22,6 +22,8 @@ let cards = [
 ];
 
 let cardsInPlay = [];
+let playerScore = 0;
+let scoreDisplay = document.getElementById("scoreDisplay");
 
 let checkForMatch = function () {
 	if (cardsInPlay.length === 2) {
@@ -53,5 +55,15 @@ let createBoard = function () {
 		document.getElementById("game-board").appendChild(cardElement);
 	}
 }
+
+let resetButton = document.getElementById('reset');
+	resetButton.addEventListener("click", function(){
+		let playedCards = document.getElementById("game-board").children
+		for (let i = 0; i < playedCards.length; i++){
+			playedCards[i].setAttribute("src", "images/back.png");
+			
+		}
+	});
+
 
 createBoard();
